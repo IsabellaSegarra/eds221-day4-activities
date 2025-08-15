@@ -1,0 +1,96 @@
+---
+title: "loops_and_functions"
+format: html
+---
+
+## Task 1
+
+```{r}
+#create two sequences
+transects <- c("Transect A", "Transect B", "Transect C")
+
+weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", 
+                "Friday", "Saturday", "Sunday")
+
+days_matrix <- matrix(nrow = length(weekdays), ncol = length(transects))
+
+  for (i in seq_along(weekdays)) {
+    for(j in seq_along(transects)) {
+      print(paste0(weekdays[i]), " - ", transects[j])
+    }
+  }
+
+
+```
+
+## Functions introduced 
+#Task 2
+```{r}
+force <- function(mass, acceleration){
+  return(mass * acceleration) 
+}
+```
+
+```{r}
+force <- function(mass, acceleration) {
+  force_val <- mass * acceleration
+  print(paste("The resulting force is", force_val, "Newtons."))
+}
+
+force(100, 2.9)
+```
+
+#Task 3
+
+```{r}
+#Recreate the table as a data frame 
+
+  #
+sci_name <- c("Chanos chanos", "Sphyraena barracuda", "Caranx ignobilis")
+common_name <-c("Milkfish", "Great barracuda", "Giant trevally")
+a_est <- c(0.0905, 0.0181,0.0353)
+b_est <- c(2.52, 3.27, 3.05)
+
+fish_parms <- data.frame(sci_name, common_name, a_est, b_est)
+fish_parms
+```
+
+```{r}
+#Make a function 
+
+fish_weight <- function(fish_name, tot_length){
+  weight <- a_est * tot_length ^ b_est
+  print(weight)
+}
+ #test it out
+fish_weight(Milkfish, 5)
+fish_weight(Great_barracuda, 3)
+```
+
+```{r}
+#Creating a vector
+
+fish_length <- seq(from = 0, to = 100, by = 1)
+
+#for milkfish 
+
+milkfish_weights <- 
+
+
+```
+
+#Task 4
+```{r}
+#Write function 
+
+wave_power <- function(h, t){
+  power <- 0.5 * h^2*t
+  print(power)
+}
+
+
+wave_power()
+
+```
+
+
